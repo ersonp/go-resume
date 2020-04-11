@@ -7,7 +7,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ersonp/firstapp/common"
+	"github.com/ersonp/go-resume/common"
 	"github.com/gin-gonic/gin"
 )
 

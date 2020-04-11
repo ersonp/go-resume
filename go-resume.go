@@ -3,7 +3,7 @@
 package main
 
 import (
-	"github.com/ersonp/firstapp/server"
+	"github.com/ersonp/go-resume/server"
 	"github.com/gin-gonic/gin"
 )
 
