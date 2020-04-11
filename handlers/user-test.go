@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ersonp/firstapp/common"
-	"github.com/ersonp/firstapp/middlewares"
+	"github.com/ersonp/go-resume/common"
+	"github.com/ersonp/go-resume/middlewares"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,8 +1,8 @@
 package server
 
 import (
-	"github.com/ersonp/firstapp/handlers"
-	"github.com/ersonp/firstapp/middlewares"
+	"github.com/ersonp/go-resume/handlers"
+	"github.com/ersonp/go-resume/middlewares"
 	"github.com/gin-gonic/gin"
 )
 

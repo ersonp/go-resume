@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/ersonp/firstapp/common"
-	"github.com/ersonp/firstapp/models"
+	"github.com/ersonp/go-resume/common"
+	"github.com/ersonp/go-resume/models"
 	"github.com/gin-gonic/gin"
 )
 
