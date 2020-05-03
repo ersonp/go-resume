@@ -48,11 +48,18 @@ func SetUserStatus() gin.HandlerFunc {
 		}
 	}
 }
+
 func GetRouter(withTemplates bool) *gin.Engine {
 	r := gin.Default()
 	if withTemplates {
+		SetStatic(r)
 		r.LoadHTMLGlob("templates/*")
 		r.Use(SetUserStatus())
 	}
 	return r
+}
+
+// Set path for static folder
+func SetStatic(r *gin.Engine) {
+	r.Static("/static", "./static")
 }

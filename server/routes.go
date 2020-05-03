@@ -14,8 +14,13 @@ func InitializeRoutes() {
 	// indicating whether the request was from an authenticated user or not
 	Router.Use(middlewares.SetUserStatus())
 
+	// Set the path for the static folder
+	middlewares.SetStatic(Router)
+
 	// Handle the index route
 	Router.GET("/", handlers.ShowIndexPage)
+
+	Router.GET("/home", handlers.ShowHomePage)
 
 	// Group user related routes together
 	userRoutes := Router.Group("/u")
