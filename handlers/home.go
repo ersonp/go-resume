@@ -8,17 +8,21 @@ import (
 
 func ShowHomePage(c *gin.Context) {
 	// Call the render function with the name of the template to render
+	myinfo := models.GetMyInfoData()
+	profession := models.GetProfessionList()
 	education := models.GetEducationList()
 	experience := models.GetExperienceList()
-	profession := models.GetProfessionList()
 	project := models.GetProjectList()
-	myinfo := models.GetMyInfoData()
+	skill := models.GetMySkillList()
+	smedia := models.GetSocialMediaList()
 	common.Render(c, gin.H{
-		"title":      "Home",
-		"MyInfo":     myinfo,
-		"Profession": profession,
-		"Education":  education,
-		"Experience": experience,
-		"Project":    project,
+		"title":       "Home",
+		"MyInfo":      myinfo,
+		"Profession":  profession,
+		"Education":   education,
+		"Experience":  experience,
+		"Project":     project,
+		"Skill":       skill,
+		"SocialMedia": smedia,
 	}, "home.html")
 }

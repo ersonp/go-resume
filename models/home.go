@@ -135,3 +135,94 @@ var MyInfoData = MyInfo{
 func GetMyInfoData() MyInfo {
 	return MyInfoData
 }
+
+type Skill struct {
+	ID         int    `json:"id"`
+	Name       string `json:"name"`
+	Percentage int    `json:"percentage"`
+}
+
+type SkillType struct {
+	Main []Skill `json:"main"`
+	Sub  []Skill `json:"sub"`
+}
+
+var MainSkillList = []Skill{
+	{
+		ID:         1,
+		Name:       "JULY 2019-PRESENT",
+		Percentage: 34,
+	},
+	{
+		ID:         2,
+		Name:       "JULY 2018-NOV 2018",
+		Percentage: 33,
+	},
+}
+
+var SubSkillList = []Skill{
+	{
+		ID:         1,
+		Name:       "JULY 2019-PRESENT",
+		Percentage: 57,
+	},
+	{
+		ID:         2,
+		Name:       "JULY 2018-NOV 2018",
+		Percentage: 89,
+	},
+	{
+		ID:         3,
+		Name:       "JULY 2018-NOV 2018",
+		Percentage: 76,
+	},
+	{
+		ID:         4,
+		Name:       "JULY 2018-NOV 2018",
+		Percentage: 88,
+	},
+	{
+		ID:         5,
+		Name:       "JULY 2018-NOV 2018",
+		Percentage: 50,
+	},
+}
+
+var SkillTypeData = SkillType{
+	Main: MainSkillList,
+	Sub:  SubSkillList,
+}
+
+// Return a list of all the experience
+func GetMySkillList() SkillType {
+	return SkillTypeData
+}
+
+type SocialMedia struct {
+	ID    int    `json:"id"`
+	Link  string `json:"link"`
+	Image string `json:"image"`
+}
+
+var SocialMediaList = []SocialMedia{
+	{
+		ID:    1,
+		Link:  "",
+		Image: "icon-twitter",
+	},
+	{
+		ID:    2,
+		Link:  "",
+		Image: "icon-facebook",
+	},
+	{
+		ID:    3,
+		Link:  "",
+		Image: "icon-instagram",
+	},
+}
+
+// Return a list of all the experience
+func GetSocialMediaList() []SocialMedia {
+	return SocialMediaList
+}

@@ -18,9 +18,9 @@ func InitializeRoutes() {
 	middlewares.SetStatic(Router)
 
 	// Handle the index route
-	Router.GET("/", handlers.ShowIndexPage)
+	Router.GET("/index", handlers.ShowIndexPage)
 
-	Router.GET("/home", handlers.ShowHomePage)
+	Router.GET("/", handlers.ShowHomePage)
 
 	// Group user related routes together
 	userRoutes := Router.Group("/u")

@@ -23,10 +23,10 @@ import (
 func TestShowIndexPageUnauthenticated(t *testing.T) {
 	r := middlewares.GetRouter(true)
 
-	r.GET("/", ShowIndexPage)
+	r.GET("/index", ShowIndexPage)
 
 	// Create a request to send to the above route
-	req, _ := http.NewRequest("GET", "/", nil)
+	req, _ := http.NewRequest("GET", "/index", nil)
 
 	common.TestHTTPResponse(t, r, req, func(w *httptest.ResponseRecorder) bool {
 		// Test that the http status code is 200
@@ -55,10 +55,10 @@ func TestShowIndexPageAuthenticated(t *testing.T) {
 	http.SetCookie(w, &http.Cookie{Name: "token", Value: "123"})
 
 	// Define the route similar to its definition in the routes file
-	r.GET("/", ShowIndexPage)
+	r.GET("/index", ShowIndexPage)
 
 	// Create a request to send to the above route
-	req, _ := http.NewRequest("GET", "/", nil)
+	req, _ := http.NewRequest("GET", "/index", nil)
 	req.Header = http.Header{"Cookie": w.HeaderMap["Set-Cookie"]}
 
 	// Create the service and process the above request.
@@ -147,10 +147,10 @@ func TestArticleListJSON(t *testing.T) {
 	r := middlewares.GetRouter(true)
 
 	// Define the route similar to its definition in the routes file
-	r.GET("/", ShowIndexPage)
+	r.GET("/index", ShowIndexPage)
 
 	// Create a request to send to the above route
-	req, _ := http.NewRequest("GET", "/", nil)
+	req, _ := http.NewRequest("GET", "/index", nil)
 	req.Header.Add("Accept", "application/json")
 
 	common.TestHTTPResponse(t, r, req, func(w *httptest.ResponseRecorder) bool {
